@@ -1,0 +1,27 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
+// const redisHandler = require('./common/redis');
+const createError = require('http-errors')
+const express = require('express')
+const cors = require('cors')
+const app = express()
+const routes = require('./app/router')
+const port = process.env.PORT || 3000
+const env = process.env.NODE_ENV || 'dev'
+const testEnv = 'test'
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cors())
+app.use('/', routes)
+
+const server = app.listen(port, () => {
+    console.log(`Running in: ${env} and listening on port: ${port}`)
+})
+
+// if (env != 'dev') {
+//     redisHandler.initConnection();
+// }
+
+module.exports = server
