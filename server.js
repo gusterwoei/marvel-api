@@ -8,7 +8,6 @@ const app = express()
 const routes = require('./app/router')
 const port = process.env.PORT || 3000
 const env = process.env.NODE_ENV || 'dev'
-const testEnv = 'test'
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
