@@ -13,7 +13,7 @@ const marvelApi = isTest
 const BadRequestError = require('../../common/errors/bad-request-error')
 const util = require('../../common/utils/util')
 
-const CLS_NAME = 'transfer.service.js'
+const CLS_NAME = 'character.service.js'
 
 class CharacterService {
 
