@@ -1,3 +1,11 @@
+/**
+ * @author Guster
+ * @email gusterwoei@gmail.com
+ * @create date 2021-03-20 15:30:56
+ * @modify date 2021-03-20 15:30:56
+ * @desc character controller
+ */
+
 const BaseError = require('../../common/errors/base-error');
 const characterService = require('./character.service');
 const url = require('url');

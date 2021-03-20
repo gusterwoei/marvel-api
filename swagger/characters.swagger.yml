@@ -1,0 +1,118 @@
+paths:
+  /characters:
+    get:
+      tags:
+        - Retrieve Marvel character id list
+      summary: Retrieve Marvel character id list with pagination option
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+          default: 100
+          description: Number of character ids to return. Max is 100.
+        - in: query
+          name: offset
+          schema:
+            type: integer
+          required: false
+          default: 0
+          description: Zero-based page starting index
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+                example:
+                  - 1011334
+                  - 1017100
+                  - 1009144
+                  - 1010699
+                  - 1009146
+                  - 1016823
+                  - 1009148
+                  - 1009149
+                  - 1010903
+                  - 1011266
+                  - 1010354
+                  - 1010846
+                  - 1011297
+                  - 1011031
+                  - 1009150
+                  - 1011198
+                  - 1011175
+                  - 1011136
+                  - 1011176
+                  - 1010870
+        "400":
+          description: Bad Request / Invalid params
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 400,
+                  error: limit cannot be less than 1
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 500,
+                  error: Internal server error
+  /characters/{id}:
+    get:
+      tags:
+        - Get character detail with id
+      summary: Get character detail with id
+      parameters:
+        - in: path
+          name: id
+          description: Character ID
+          schema:
+            type: integer
+          require: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  description:
+                    type: string
+              examples:
+                success:
+                  value:
+                    id: 1017100,
+                    name: A-Bomb (HAS),
+                    description: Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!
+        "400":
+          description: Bad Request / Invalid params
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 400,
+                  error: We couldn't find that character
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 500,
+                  error: Internal server error

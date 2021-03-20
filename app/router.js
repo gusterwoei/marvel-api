@@ -1,8 +1,15 @@
+/**
+ * @author Guster
+ * @email gusterwoei@gmail.com
+ * @create date 2021-03-20 15:31:38
+ * @modify date 2021-03-20 15:31:38
+ * @desc router
+ */
+
 const swaggerUi = require('swagger-ui-express')
 const swaggerJSDoc = require('swagger-jsdoc')
 const express = require('express')
 const router = express.Router()
-const path = require('path');
 const characterController = require('./character/character.controller')
 
 // API endpoint routing
@@ -14,19 +21,13 @@ const options = {
     definition: {
         // open api version
         openapi: '3.0.0',
-
-        // swagger pages
         info: {
             title: 'Marvel API',
             version: '1.0.0'
         },
     }, 
-
-    //path to collect swagger comment
-    apis: [ path.join(__dirname, '/*/*swagger.js') ]
+    apis: ['./swagger/*.yml']
 }
-
-// generate jsDoc
 const swaggerSpec = swaggerJSDoc(options)
 
 // open swagger api
