@@ -66,6 +66,8 @@ npm run test
 
 After the application is running, you can access the swagger doc via [http://localhost:8080/docs](http://localhost:8080/docs) in your browser.
 
+---
+
 ## Caching Strategy
 
 - For simplicity of this application, the in-memory `node-cache` library is used for the caching machanism instead of the more advanced tool like `Redis`.
