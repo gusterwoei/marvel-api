@@ -1,5 +1,7 @@
 # Marvel API
 
+[![Node.js CI](https://github.com/gusterwoei/marvel-api/actions/workflows/default.yml/badge.svg)](https://github.com/gusterwoei/marvel-api/actions/workflows/default.yml)
+
 A simple project built with express `Node.js` to demonstrate an API server that serves [Marvel API](https://developer.marvel.com) through Rest API.
 
 ## Pre-requisites
@@ -70,6 +72,6 @@ After the application is running, you can access the swagger doc via [http://loc
 
 ## Caching Strategy
 
-- For simplicity of this application, the in-memory `node-cache` library is used for the caching machanism instead of the more advanced tool like `Redis`.
+- For simplicity of this application, the in-memory `node-cache` library is used for the caching mechanism instead of the more advanced tool like `Redis`.
 - For endpoint `/characters`, the cache is determined by the combination of `limit` and `offset`
 - Personally I think it's unlikely that Marvel characters will be added on a frequently hourly basis or so. Hence The API results are cached with a `ttl` expiry of 24 hours.
