@@ -26,7 +26,7 @@ const options = {
             version: '1.0.0'
         },
     }, 
-    apis: ['./swagger/*.yml']
+    apis: ['./src/swagger/*.yml']
 }
 const swaggerSpec = swaggerJSDoc(options)
 
