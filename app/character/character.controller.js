@@ -28,6 +28,21 @@ class CharacterController {
         }
     }
 
+    /**
+     * Get character details
+     * @param {Request} req 
+     * @param {Response} res 
+     */
+    async getCharacterDetail(req, res) {
+        try {
+            const id = req.params.id
+            const result = await characterService.getCharacterDetail(id);
+            res.json(result)
+        } catch (e) {
+            handleError(e, res)
+        }
+    }
+
 }
 
 module.exports = new CharacterController();
