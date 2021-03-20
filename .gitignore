@@ -1,10 +1,10 @@
 node_modules
 package-lock.json
-config/default.json
+src/config/default.json
 *.pem
 .idea/*
 *.env
 coverage
-config/test/reports/unit-tests-report.html
+src/config/test/reports/unit-tests-report.html
 logs
 .vscode

@@ -5,7 +5,7 @@ const createError = require('http-errors')
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const routes = require('./app/router')
+const routes = require('./src/app/router')
 const port = 3000
 const env = process.env.NODE_ENV || 'dev'
 
